@@ -9,7 +9,7 @@ At the current stage, the app includes:
 
 The application will be developed further to include **complete chat functionality**, backend integration, and real-time messaging.
 
----![WhatsApp Image 2026-01-04 at 5 36 57 PM](https://github.com/user-attachments/assets/4158d952-c2cc-41d0-a949-364d1e4db813)
+---
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/4158d952-c2cc-41d0-a949-364d1e4db813" width="220" />
