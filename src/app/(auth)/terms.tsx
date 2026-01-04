@@ -2,17 +2,15 @@ import { useRouter } from 'expo-router';
 import React from 'react';
 import { Image, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { scale, verticalScale } from 'react-native-size-matters';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import imagePath from '../../constants/imagePath';
-
-
 
 const Terms = () => {
   const router = useRouter();
 
-const onAgreePress = () => {
-  router.push('/(auth)/loginotp');
-}
+  const onAgreePress = () => {
+    router.push('/(auth)/loginotp');
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -24,7 +22,9 @@ const onAgreePress = () => {
           style={styles.image}
         />
 
-        <Text style={styles.heading}>Stay connected with a community</Text>
+        <Text style={styles.heading}>
+          Stay connected with a community
+        </Text>
 
         <Text style={styles.text}>
           Communities bring members together in topic-based groups and make it easy 
@@ -36,17 +36,17 @@ const onAgreePress = () => {
       <View style={styles.footer}>
 
         <Text style={styles.legalText}>
-          Read our 
-          <Text 
+          Read our
+          <Text
             style={styles.link}
             onPress={() => Linking.openURL('https://yourwebsite.com/privacy')}
           >
             {" "}Privacy Policy
           </Text>. 
           
-          Tap <Text style={{fontWeight: 'bold'}}>"Agree and Continue"</Text> to accept the 
+          Tap <Text style={styles.boldText}>&quot;Agree and Continue&quot;</Text> to accept the
 
-          <Text 
+          <Text
             style={styles.link}
             onPress={() => Linking.openURL('https://yourwebsite.com/terms')}
           >
@@ -54,7 +54,11 @@ const onAgreePress = () => {
           </Text>.
         </Text>
 
-        <TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={onAgreePress}>
+        <TouchableOpacity
+          style={styles.button}
+          activeOpacity={0.7}
+          onPress={onAgreePress}
+        >
           <Text style={styles.buttonText}>AGREE AND CONTINUE</Text>
         </TouchableOpacity>
 
@@ -76,42 +80,44 @@ const styles = StyleSheet.create({
     flex: 2,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: scale(20),
   },
 
   image: {
-    width: scale(300),
-    height: verticalScale(300),
+    width: scale(280),
+    height: verticalScale(260),
     resizeMode: 'contain',
+    marginBottom: verticalScale(10),
   },
 
   heading: {
-    fontSize: 20,
+    fontSize: moderateScale(20),
     fontWeight: '700',
     color: 'gray',
-    marginBottom: 10,
+    marginBottom: verticalScale(8),
     textAlign: 'center',
   },
 
   text: {
-    fontSize: 12,
+    fontSize: moderateScale(12),
     textAlign: 'center',
     color: 'gray',
-    marginBottom: 20,
+    marginBottom: verticalScale(20),
   },
 
   footer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: scale(20),
   },
 
   legalText: {
-    marginBottom: 10,
-    fontSize: 12,
+    marginBottom: verticalScale(10),
+    fontSize: moderateScale(12),
     color: 'gray',
     textAlign: 'center',
+    lineHeight: moderateScale(16),
   },
 
   link: {
@@ -119,16 +125,20 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
+  boldText: {
+    fontWeight: 'bold',
+  },
+
   button: {
     backgroundColor: '#E9ACFFFF',
-    paddingVertical: 14,
-    paddingHorizontal: 50,
-    borderRadius: 30,
+    paddingVertical: verticalScale(14),
+    paddingHorizontal: scale(50),
+    borderRadius: moderateScale(30),
   },
 
   buttonText: {
     color: 'white',
-    fontSize: 14,
+    fontSize: moderateScale(14),
     fontWeight: 'bold',
   },
 });
